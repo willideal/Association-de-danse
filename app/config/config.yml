@@ -70,4 +70,4 @@ fos_user:
     db_driver:     orm
     firewall_name: main
     use_listener: false
-    user_class:  AD\InscriptionBundle\Entity\Adherent
+    user_class:  AD\InscriptionBundle\Entity\Utilisateur
