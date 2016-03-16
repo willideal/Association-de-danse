@@ -1,6 +1,6 @@
 <?php
 
-namespace AD\PresaisonBundle\Entity;
+namespace AD\StageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

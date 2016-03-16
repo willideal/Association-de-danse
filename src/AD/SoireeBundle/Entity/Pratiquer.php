@@ -1,6 +1,6 @@
 <?php
 
-namespace AD\PresaisonBundle\Entity;
+namespace AD\SoireeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

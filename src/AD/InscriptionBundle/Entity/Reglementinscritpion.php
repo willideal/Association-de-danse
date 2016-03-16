@@ -1,6 +1,6 @@
 <?php
 
-namespace AD\PresaisonBundle\Entity;
+namespace AD\InscriptionBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
