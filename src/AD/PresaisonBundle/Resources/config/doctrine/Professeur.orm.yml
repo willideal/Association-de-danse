@@ -1,0 +1,64 @@
+AD\PresaisonBundle\Entity\Professeur:
+    type: entity
+    table: professeur
+    id:
+        idprof:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idProf
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomprof:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: nomProf
+        prenomprof:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: prenomProf
+        telprof:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: telProf
+        emailprof:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: eMailProf
+        tarifhorairecours:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: tarifHoraireCours
+        forfaithorairestage:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: forfaitHoraireStage
+    manyToMany:
+        idstage:
+            targetEntity: Stage
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idprof
+            joinTable:
+                name: assure
+                joinColumns:
+                    -
+                        name: idProf
+                        referencedColumnName: idProf
+                inverseJoinColumns:
+                    -
+                        name: idStage
+                        referencedColumnName: idStage
+            orderBy: null
+    lifecycleCallbacks: {  }

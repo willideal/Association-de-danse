@@ -1,0 +1,59 @@
+AD\PresaisonBundle\Entity\Niveau:
+    type: entity
+    table: niveau
+    id:
+        idniveau:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idNiveau
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelleniveau:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: libelleNiveau
+        descniveau:
+            type: string
+            nullable: true
+            length: 255
+            fixed: true
+            column: descNiveau
+    manyToMany:
+        iddanse:
+            targetEntity: Danse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idniveau
+            joinTable:
+                name: niveaudanse
+                joinColumns:
+                    -
+                        name: idNiveau
+                        referencedColumnName: idNiveau
+                inverseJoinColumns:
+                    -
+                        name: idDanse
+                        referencedColumnName: idDanse
+            orderBy: null
+        idstage:
+            targetEntity: Stage
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idniveau
+            joinTable:
+                name: niveaudansestage
+                joinColumns:
+                    -
+                        name: idNiveau
+                        referencedColumnName: idNiveau
+                inverseJoinColumns:
+                    -
+                        name: idStage
+                        referencedColumnName: idStage
+            orderBy: null
+    lifecycleCallbacks: {  }

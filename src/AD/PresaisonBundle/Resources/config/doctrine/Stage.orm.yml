@@ -1,0 +1,113 @@
+AD\PresaisonBundle\Entity\Stage:
+    type: entity
+    table: stage
+    indexes:
+        I_FK_stage_salle:
+            columns:
+                - idSalle
+        I_FK_stage_danse:
+            columns:
+                - idDanse
+    id:
+        idstage:
+            type: bigint
+            nullable: false
+            unsigned: false
+            id: true
+            column: idStage
+            generator:
+                strategy: IDENTITY
+    fields:
+        intitulestage:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: intituleStage
+        datestage:
+            type: date
+            nullable: true
+            column: dateStage
+        heuredebutstage:
+            type: time
+            nullable: true
+            column: heureDebutStage
+        heurefinstage:
+            type: time
+            nullable: true
+            column: heureFinStage
+        tarifstage:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: tarifStage
+        plafond:
+            type: integer
+            nullable: true
+            unsigned: false
+        seuilviabilite:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: seuilViabilite
+        delaipreinscription:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: delaiPreinscription
+        montantpreinscription:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: montantPreinscription
+    manyToOne:
+        iddanse:
+            targetEntity: Danse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDanse:
+                    referencedColumnName: idDanse
+            orphanRemoval: false
+        idsalle:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idSalle:
+                    referencedColumnName: idSalle
+            orphanRemoval: false
+    manyToMany:
+        idprof:
+            targetEntity: Professeur
+            cascade: {  }
+            mappedBy: idstage
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+        idstagiaire:
+            targetEntity: Stagiaire
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idstage
+            joinTable:
+                name: inscriptionstage
+                joinColumns:
+                    -
+                        name: idStage
+                        referencedColumnName: idStage
+                inverseJoinColumns:
+                    -
+                        name: idStagiaire
+                        referencedColumnName: idStagiaire
+            orderBy: null
+        idniveau:
+            targetEntity: Niveau
+            cascade: {  }
+            mappedBy: idstage
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

@@ -1,0 +1,51 @@
+AD\PresaisonBundle\Entity\Pratiquer:
+    type: entity
+    table: pratiquer
+    indexes:
+        I_FK_pratiquer_salle:
+            columns:
+                - idSalle
+        I_FK_pratiquer_soiree:
+            columns:
+                - idSoiree
+        I_FK_pratiquer_danse:
+            columns:
+                - idDanse
+    id:
+        idpratiquer:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idPratiquer
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        iddanse:
+            targetEntity: Danse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDanse:
+                    referencedColumnName: idDanse
+            orphanRemoval: false
+        idsalle:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idSalle:
+                    referencedColumnName: idSalle
+            orphanRemoval: false
+        idsoiree:
+            targetEntity: Soiree
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idSoiree:
+                    referencedColumnName: idSoiree
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

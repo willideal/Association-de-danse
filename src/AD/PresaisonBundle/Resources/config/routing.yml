@@ -1,0 +1,3 @@
+ad_presaison_homepage:
+    path:     /
+    defaults: { _controller: ADPresaisonBundle:Default:index }

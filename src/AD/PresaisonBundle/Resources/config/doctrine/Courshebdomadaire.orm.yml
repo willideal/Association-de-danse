@@ -1,0 +1,78 @@
+AD\PresaisonBundle\Entity\Courshebdomadaire:
+    type: entity
+    table: courshebdomadaire
+    indexes:
+        I_FK_coursHebdomadaire_salle:
+            columns:
+                - idSalle
+        I_FK_coursHebdomadaire_danse:
+            columns:
+                - idDanse
+        I_FK_coursHebdomadaire_niveau:
+            columns:
+                - idNiveau
+        I_FK_coursHebdomadaire_professeur:
+            columns:
+                - idProf
+    id:
+        idcourshebdo:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idCoursHebdo
+            generator:
+                strategy: IDENTITY
+    fields:
+        jourcourshebdo:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: jourCoursHebdo
+        heuredebutcourshebdo:
+            type: time
+            nullable: true
+            column: heureDebutCoursHebdo
+        heurefincourshebdo:
+            type: time
+            nullable: true
+            column: heureFinCoursHebdo
+    manyToOne:
+        idprof:
+            targetEntity: Professeur
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idProf:
+                    referencedColumnName: idProf
+            orphanRemoval: false
+        idsalle:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idSalle:
+                    referencedColumnName: idSalle
+            orphanRemoval: false
+        iddanse:
+            targetEntity: Danse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDanse:
+                    referencedColumnName: idDanse
+            orphanRemoval: false
+        idniveau:
+            targetEntity: Niveau
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idNiveau:
+                    referencedColumnName: idNiveau
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

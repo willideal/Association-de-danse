@@ -1,0 +1,33 @@
+AD\PresaisonBundle\Entity\Typeforfait:
+    type: entity
+    table: typeforfait
+    id:
+        idtypeforfait:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idTypeForfait
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelletypeforfait:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: libelleTypeForfait
+        tariftypeforfait:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: tarifTypeForfait
+    manyToMany:
+        iddanse:
+            targetEntity: Danse
+            cascade: {  }
+            mappedBy: idtypeforfait
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

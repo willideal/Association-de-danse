@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace AD\StageBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class ADStageBundle extends Bundle
 {
 }

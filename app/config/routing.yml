@@ -1,3 +1,20 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+ad_stage:
+    resource: "@ADStageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ad_soiree:
+    resource: "@ADSoireeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ad_inscription:
+    resource: "@ADInscriptionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ad_presaison:
+    resource: "@ADPresaisonBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ad_core:
+    resource: "@ADCoreBundle/Resources/config/routing.yml"
+    prefix:   /ad
+

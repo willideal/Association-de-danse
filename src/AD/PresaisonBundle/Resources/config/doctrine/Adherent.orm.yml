@@ -1,0 +1,72 @@
+AD\PresaisonBundle\Entity\Adherent:
+    type: entity
+    table: adherent
+    indexes:
+        I_FK_adherent_reduction:
+            columns:
+                - idReduction
+    id:
+        idadherent:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idAdherent
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomadherent:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: nomAdherent
+        prenomadherent:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: prenomAdherent
+        datenaissadherent:
+            type: date
+            nullable: true
+            column: dateNaissAdherent
+        teladherent:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: telAdherent
+        emailadherent:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: eMailAdherent
+    manyToOne:
+        idreduction:
+            targetEntity: Reduction
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idReduction:
+                    referencedColumnName: idReduction
+            orphanRemoval: false
+    manyToMany:
+        idsaison:
+            targetEntity: Saison
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idadherent
+            joinTable:
+                name: adherer
+                joinColumns:
+                    -
+                        name: idAdherent
+                        referencedColumnName: idAdherent
+                inverseJoinColumns:
+                    -
+                        name: idSaison
+                        referencedColumnName: idSaison
+            orderBy: null
+    lifecycleCallbacks: {  }

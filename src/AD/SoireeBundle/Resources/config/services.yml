@@ -1,0 +1,4 @@
+services:
+#    ad_soiree.example:
+#        class: AD\SoireeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+ad_soiree_homepage:
+    path:     /
+    defaults: { _controller: ADSoireeBundle:Default:index }

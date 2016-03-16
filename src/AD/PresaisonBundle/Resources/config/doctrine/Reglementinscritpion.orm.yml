@@ -1,0 +1,44 @@
+AD\PresaisonBundle\Entity\Reglementinscritpion:
+    type: entity
+    table: reglementinscritpion
+    indexes:
+        I_FK_reglementInscritpion_typeReglement:
+            columns:
+                - idTypeReglement
+        I_FK_reglementInscritpion_inscriptionForfait:
+            columns:
+                - idInscriptionForfait
+    id:
+        idreglementinscritpion:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idReglementInscritpion
+            generator:
+                strategy: IDENTITY
+    fields:
+        datereglement:
+            type: date
+            nullable: true
+            column: dateReglement
+    manyToOne:
+        idinscriptionforfait:
+            targetEntity: Inscriptionforfait
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idInscriptionForfait:
+                    referencedColumnName: idInscriptionForfait
+            orphanRemoval: false
+        idtypereglement:
+            targetEntity: Typereglement
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTypeReglement:
+                    referencedColumnName: idTypeReglement
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

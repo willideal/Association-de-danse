@@ -1,0 +1,3 @@
+ad_inscription_homepage:
+    path:     /
+    defaults: { _controller: ADInscriptionBundle:Default:index }

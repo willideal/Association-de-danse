@@ -1,0 +1,51 @@
+AD\PresaisonBundle\Entity\Inscriptionforfait:
+    type: entity
+    table: inscriptionforfait
+    indexes:
+        I_FK_inscriptionForfait_typeForfait:
+            columns:
+                - idTypeForfait
+    uniqueConstraints:
+        I_FK_inscriptionForfait_adherent:
+            columns:
+                - idAdherent
+    id:
+        idinscriptionforfait:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idInscriptionForfait
+            generator:
+                strategy: IDENTITY
+    fields:
+        dateinscriptionforfait:
+            type: date
+            nullable: true
+            column: dateInscriptionForfait
+        etatinscriptionforfait:
+            type: string
+            nullable: true
+            length: 32
+            fixed: true
+            column: etatInscriptionForfait
+    manyToOne:
+        idadherent:
+            targetEntity: Adherent
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAdherent:
+                    referencedColumnName: idAdherent
+            orphanRemoval: false
+        idtypeforfait:
+            targetEntity: Typeforfait
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTypeForfait:
+                    referencedColumnName: idTypeForfait
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

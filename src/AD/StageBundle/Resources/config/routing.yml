@@ -1,0 +1,3 @@
+ad_stage_homepage:
+    path:     /
+    defaults: { _controller: ADStageBundle:Default:index }

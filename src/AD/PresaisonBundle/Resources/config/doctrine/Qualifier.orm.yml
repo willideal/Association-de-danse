@@ -1,0 +1,51 @@
+AD\PresaisonBundle\Entity\Qualifier:
+    type: entity
+    table: qualifier
+    indexes:
+        I_FK_qualifier_niveau:
+            columns:
+                - idNiveau
+        I_FK_qualifier_professeur:
+            columns:
+                - idProf
+        I_FK_qualifier_danse:
+            columns:
+                - idDanse
+    id:
+        idqualif:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idQualif
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        iddanse:
+            targetEntity: Danse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDanse:
+                    referencedColumnName: idDanse
+            orphanRemoval: false
+        idniveau:
+            targetEntity: Niveau
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idNiveau:
+                    referencedColumnName: idNiveau
+            orphanRemoval: false
+        idprof:
+            targetEntity: Professeur
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idProf:
+                    referencedColumnName: idProf
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
