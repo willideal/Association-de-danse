@@ -15,9 +15,9 @@ class Lieu
     /**
      * @var integer
      *
-     * @ORM\Column(name="idLieu", type="bigint", nullable=false)
+     * @ORM\Column(name="idLieu", type="bigint")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idlieu;
 

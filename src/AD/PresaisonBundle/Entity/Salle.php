@@ -15,9 +15,9 @@ class Salle
     /**
      * @var integer
      *
-     * @ORM\Column(name="idSalle", type="integer", nullable=false)
+     * @ORM\Column(name="idSalle", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idsalle;
 
@@ -36,7 +36,7 @@ class Salle
     private $capacite;
 
     /**
-     * @var \Lieu
+     * @var \AD\PresaisonBundle\Entity\Lieu
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Lieu")
      * @ORM\JoinColumns({

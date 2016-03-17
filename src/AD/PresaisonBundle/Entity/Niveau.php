@@ -15,9 +15,9 @@ class Niveau
     /**
      * @var integer
      *
-     * @ORM\Column(name="idNiveau", type="integer", nullable=false)
+     * @ORM\Column(name="idNiveau", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idniveau;
 
@@ -53,7 +53,7 @@ class Niveau
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="AD\StageBundle\Entity\Stage", inversedBy="idniveau")
+     * @ORM\ManyToMany(targetEntity="AD\PresaisonBundle\Entity\Stage", inversedBy="idniveau")
      * @ORM\JoinTable(name="niveaudansestage",
      *   joinColumns={
      *     @ORM\JoinColumn(name="idNiveau", referencedColumnName="idNiveau")

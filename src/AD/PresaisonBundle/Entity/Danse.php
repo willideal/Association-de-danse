@@ -15,9 +15,9 @@ class Danse
     /**
      * @var integer
      *
-     * @ORM\Column(name="idDanse", type="integer", nullable=false)
+     * @ORM\Column(name="idDanse", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $iddanse;
 

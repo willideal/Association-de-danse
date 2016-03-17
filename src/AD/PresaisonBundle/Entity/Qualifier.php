@@ -15,14 +15,14 @@ class Qualifier
     /**
      * @var integer
      *
-     * @ORM\Column(name="idQualif", type="integer", nullable=false)
+     * @ORM\Column(name="idQualif", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idqualif;
 
     /**
-     * @var \Danse
+     * @var \AD\PresaisonBundle\Entity\Danse
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Danse")
      * @ORM\JoinColumns({
@@ -32,7 +32,7 @@ class Qualifier
     private $iddanse;
 
     /**
-     * @var \Niveau
+     * @var \AD\PresaisonBundle\Entity\Niveau
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Niveau")
      * @ORM\JoinColumns({
@@ -42,7 +42,7 @@ class Qualifier
     private $idniveau;
 
     /**
-     * @var \Professeur
+     * @var \AD\PresaisonBundle\Entity\Professeur
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Professeur")
      * @ORM\JoinColumns({

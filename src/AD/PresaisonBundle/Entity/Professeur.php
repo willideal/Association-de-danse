@@ -15,9 +15,9 @@ class Professeur
     /**
      * @var integer
      *
-     * @ORM\Column(name="idProf", type="integer", nullable=false)
+     * @ORM\Column(name="idProf", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idprof;
 
@@ -66,7 +66,7 @@ class Professeur
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="AD\StageBundle\Entity\Stage", inversedBy="idprof")
+     * @ORM\ManyToMany(targetEntity="AD\PresaisonBundle\Entity\Stage", inversedBy="idprof")
      * @ORM\JoinTable(name="assure",
      *   joinColumns={
      *     @ORM\JoinColumn(name="idProf", referencedColumnName="idProf")

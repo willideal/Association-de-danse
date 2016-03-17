@@ -15,9 +15,9 @@ class Courshebdomadaire
     /**
      * @var integer
      *
-     * @ORM\Column(name="idCoursHebdo", type="integer", nullable=false)
+     * @ORM\Column(name="idCoursHebdo", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idcourshebdo;
 
@@ -43,7 +43,7 @@ class Courshebdomadaire
     private $heurefincourshebdo;
 
     /**
-     * @var \Professeur
+     * @var \AD\PresaisonBundle\Entity\Professeur
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Professeur")
      * @ORM\JoinColumns({
@@ -53,7 +53,7 @@ class Courshebdomadaire
     private $idprof;
 
     /**
-     * @var \Salle
+     * @var \AD\PresaisonBundle\Entity\Salle
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Salle")
      * @ORM\JoinColumns({
@@ -63,7 +63,7 @@ class Courshebdomadaire
     private $idsalle;
 
     /**
-     * @var \Danse
+     * @var \AD\PresaisonBundle\Entity\Danse
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Danse")
      * @ORM\JoinColumns({
@@ -73,7 +73,7 @@ class Courshebdomadaire
     private $iddanse;
 
     /**
-     * @var \Niveau
+     * @var \AD\PresaisonBundle\Entity\Niveau
      *
      * @ORM\ManyToOne(targetEntity="AD\PresaisonBundle\Entity\Niveau")
      * @ORM\JoinColumns({

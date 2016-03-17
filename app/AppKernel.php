@@ -19,8 +19,8 @@ class AppKernel extends Kernel
             new AD\InscriptionBundle\ADInscriptionBundle(),
             new AD\SoireeBundle\ADSoireeBundle(),
             new AD\StageBundle\ADStageBundle(),
-			new AD\CoreBundle\ADCoreBundle(),
-			new FOS\UserBundle\FOSUserBundle()
+			new AD\CoreBundle\ADCoreBundle()
+			
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

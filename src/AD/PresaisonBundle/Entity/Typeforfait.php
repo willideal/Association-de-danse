@@ -15,9 +15,9 @@ class Typeforfait
     /**
      * @var integer
      *
-     * @ORM\Column(name="idTypeForfait", type="integer", nullable=false)
+     * @ORM\Column(name="idTypeForfait", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idtypeforfait;
 
