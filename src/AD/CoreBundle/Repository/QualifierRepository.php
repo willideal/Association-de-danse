@@ -21,7 +21,6 @@ class QualifierRepository extends \Doctrine\ORM\EntityRepository
 			   ->setParameter('iddanse', $iddanse)  ;
 			  return $qb
 				->getQuery()
-				->getOneOrNullResult()
-			  ;
+				->getOneOrNullResult() ;
 }
 }
