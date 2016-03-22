@@ -1,3 +1,149 @@
 ad_presaison_homepage:
     path:     /
     defaults: { _controller: ADPresaisonBundle:Default:index }
+#route niveau
+ad_niveau_lister:
+    path:  /admin/niveau/
+    defaults: { _controller: ADPresaisonBundle:Niveau:lister }	
+ad_niveau_ajouter:
+    path:  /admin/niveau/ajouter
+    defaults: { _controller: ADPresaisonBundle:Niveau:modifier }
+ad_niveau_lister:
+    path:  /admin/niveau/lister/
+    defaults: { _controller: ADPresaisonBundle:Niveau:lister }
+ad_niveau_modifier:
+    path:  /admin/niveau/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Niveau:modifier }
+ad_niveau_supprimer:
+    path:  /admin/niveau/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Niveau:supprimer }
+
+#route danse
+ad_danse_lister:
+    path:  /admin/danse/
+    defaults: { _controller: ADPresaisonBundle:Danse:lister }	
+ad_danse_ajouter:
+    path:  /admin/danse/ajouter
+    defaults: { _controller: ADPresaisonBundle:Danse:modifier }
+ad_danse_lister:
+    path:  /admin/danse/lister/
+    defaults: { _controller: ADPresaisonBundle:Danse:lister }
+ad_danse_modifier:
+    path:  /admin/danse/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Danse:modifier }
+ad_danse_supprimer:
+    path:  /admin/danse/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Danse:supprimer }
+
+#route forfait
+ad_forfait_lister:
+    path:  /admin/forfait/
+    defaults: { _controller: ADPresaisonBundle:TypeForfait:lister }	
+ad_forfait_ajouter:
+    path:  /admin/forfait/ajouter
+    defaults: { _controller: ADPresaisonBundle:TypeForfait:modifier }
+ad_forfait_lister:
+    path:  /admin/forfait/lister/
+    defaults: { _controller: ADPresaisonBundle:TypeForfait:lister }
+ad_forfait_modifier:
+    path:  /admin/forfait/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:TypeForfait:modifier }
+ad_forfait_supprimer:
+    path:  /admin/forfait/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:TypeForfait:supprimer }
+
+#route lieu
+ad_lieu_lister:
+    path:  /admin/lieu/
+    defaults: { _controller: ADPresaisonBundle:Lieu:lister }	
+ad_lieu_ajouter:
+    path:  /admin/lieu/ajouter
+    defaults: { _controller: ADPresaisonBundle:Lieu:modifier }
+ad_lieu_lister:
+    path:  /admin/lieu/lister/
+    defaults: { _controller: ADPresaisonBundle:Lieu:lister }
+ad_lieu_modifier:
+    path:  /admin/lieu/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Lieu:modifier }
+ad_lieu_supprimer:
+    path:  /admin/lieu/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Lieu:supprimer }
+
+#route salle
+ad_salle_lister:
+    path:  /admin/salle/
+    defaults: { _controller: ADPresaisonBundle:Salle:lister }	
+ad_salle_ajouter:
+    path:  /admin/salle/ajouter
+    defaults: { _controller: ADPresaisonBundle:Salle:modifier }
+ad_salle_lister:
+    path:  /admin/salle/lister/
+    defaults: { _controller: ADPresaisonBundle:Salle:lister }
+ad_salle_modifier:
+    path:  /admin/salle/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Salle:modifier }
+ad_salle_supprimer:
+    path:  /admin/salle/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Salle:supprimer }
+
+#route professeur
+ad_professeur_lister:
+    path:  /admin/professeur/
+    defaults: { _controller: ADPresaisonBundle:Professeur:lister }	
+ad_professeur_ajouter:
+    path:  /admin/professeur/ajouter
+    defaults: { _controller: ADPresaisonBundle:Professeur:modifier }
+ad_professeur_lister:
+    path:  /admin/professeur/lister/
+    defaults: { _controller: ADPresaisonBundle:Professeur:lister }
+ad_professeur_modifier:
+    path:  /admin/professeur/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Professeur:modifier }
+ad_professeur_supprimer:
+    path:  /admin/professeur/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Professeur:supprimer }
+ad_professeur_rechercher:
+    path: /admin/professeur/rechercher
+    defaults: { _controller: ADPresaisonBundle:Professeur:rechercher }
+    requirements:
+    methods: POST
+
+#route qualifier
+ad_qualifier_lister:
+    path:  /admin/qualifier/
+    defaults: { _controller: ADPresaisonBundle:Qualifier:lister }	
+ad_qualifier_ajouter:
+    path:  /admin/qualifier/ajouter
+    defaults: { _controller: ADPresaisonBundle:Qualifier:modifier }
+ad_qualifier_lister:
+    path:  /admin/qualifier/lister/
+    defaults: { _controller: ADPresaisonBundle:Qualifier:lister }
+ad_qualifier_modifier:
+    path:  /admin/qualifier/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Qualifier:modifier }
+ad_qualifier_supprimer:
+    path:  /admin/qualifier/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Qualifier:supprimer }
+
+
+#route cours
+ad_cours_lister:
+    path:  /cours/
+    defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:lister }
+
+ad_cours_liste:
+    path:  /planning/
+    defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:liste }
+ad_cours_ajouter:
+    path:  /admin/cours/ajouter
+    defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:modifier }
+ad_cours_lister:
+    path:  /admin/cours/lister/
+    defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:lister }
+ad_cours_modifier:
+    path:  /admin/cours/modifier/{id}
+    defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:modifier }
+ad_cours_supprimer:
+    path:  /admin/cours/supprimer/{id}
+    defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:supprimer }
+

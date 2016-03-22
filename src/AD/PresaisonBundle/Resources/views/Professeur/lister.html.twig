@@ -1,0 +1,33 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<form id="form_recherche" action="{{ path('ad_professeur_rechercher') }}" method="post">
+	{{ form_widget(form) }}
+	<input type="submit" value="Rechercher" />
+</form>
+<div class="loading"></div>
+<div id="resultats_recherche"> 
+   {% include 'ADPresaisonBundle:Professeur:liste.html.twig' with {'professeurs' : professeurs}  %}
+</div>
+</br></br><br/><p> <a href="{{ path('ad_professeur_ajouter') }}">Ajouter un professeur</a><p>
+
+<script>
+$(".loading").hide();
+$("#form_recherche").submit(function(){ 
+    $(".loading").show();
+    var motcle = $("#professeurrecherche_motcle").val();
+    var DATA = 'motcle=' + motcle;
+    $.ajax({
+        type: "POST",
+        url: "{{ path('ad_professeur_rechercher')}}",
+        data: DATA,
+        cache: false,
+        success: function(data){
+           $('#resultats_recherche').html(data);
+           $(".loading").hide();
+        }
+    });    
+    return false;
+});
+</script>
+{% endblock %}

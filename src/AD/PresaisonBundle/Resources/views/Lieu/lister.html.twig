@@ -1,0 +1,28 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Lieux des cours</h1>
+	<TR>
+             <TH><b>Nom</b></TH>
+			 <TH><b>Adresse</b></TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for l in lieus %}
+    <tr>
+	<td>{{ l.nomLieu }}</td>
+	<td>{{ l.adresseLieu }}</td>
+	<td><a href="{{ path('ad_lieu_modifier', { 'id': l.idLieu }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_lieu_supprimer', { 'id': l.idLieu }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun lieu n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br><p> <a href="{{ path('ad_lieu_ajouter') }}">Ajouter un lieu</a><p>
+{% endblock %}

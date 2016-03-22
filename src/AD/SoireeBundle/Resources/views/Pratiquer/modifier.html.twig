@@ -1,0 +1,32 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+
+{% block content %}
+<h1>Ajouter/Modifier les danses d'une soirée</h1>
+
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter/modifier les danses pratiqués au cours d'une soirée </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Envoyer" />
+    </form>
+<br/><br/><br/>
+    
+{% if is_granted('ROLE_ADMIN') %}
+	<ul>
+        <li>
+            <p><a href="{{ path('ad_pratiquer_lister') }}">Retour à la liste des cours pratiqués</a></p>
+        </li>
+    </ul>
+{% endif %}
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+{% endblock %}

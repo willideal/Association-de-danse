@@ -1,0 +1,28 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Niveaux des danses</h1>
+	<TR>
+             <TH><b>Libellé</b></TH>
+			 <TH>Description</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for n in niveaus %}
+    <tr>
+	<td>{{ n.libelleniveau }}</td>
+	<td>{{ n.descniveau }}</td>
+	<td><a href="{{ path('ad_niveau_modifier', { 'id': n.idniveau }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_niveau_supprimer', { 'id': n.idniveau }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun niveau n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+<br/><br/><br/>
+</br></br><p> <a href="{{ path('ad_niveau_ajouter') }}">Ajouter un niveau</a><p>
+{% endblock %}

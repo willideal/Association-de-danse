@@ -13,6 +13,7 @@
             <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
 			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link href="{{ asset('bundles/adcore/css/screen.css') }}" type="text/css" rel="stylesheet" />
+			<link href="{{ asset('bundles/adcore/css/contact.css') }}" type="text/css" rel="stylesheet" />
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('bundles/adcore/images/favicon.ico') }}" />
     </head>
@@ -25,9 +26,10 @@
                         <nav>
                             <ul class="navigation">
                                 <li><a href="{{ path('ad_core_homepage') }}">Accueil</a></li>
-                                <li><a href="#">Danse</a></li>
-                                <li><a href="#">Forfait</a></li>
-                                <li><a href="#">Evenement</a></li>
+                                <li><a href="{{ path('ad_cours_liste') }}">Association</a></li>
+                                <li><a href="{{ path('ad_cours_liste') }}">Planning</a></li>
+                                <li><a href="{{ path('ad_evenement_liste') }}">Evenement</a></li>
+									
                                 <li><a href="{{ path('ad_core_contact') }}">Contact</a></li>
                             </ul>
                         </nav>
@@ -49,8 +51,17 @@
 
             <div id="footer">
                 {% block footer %}
-                    Association de danse - 2016, created by <a href="https://orleans.miage.fr/stash/projects/PSI/repos/groupe14/browse">GROUPE14</a>
-                {% endblock %}
+                    Association de danse - 2016, created by <a href="https://orleans.miage.fr/stash/projects/PSI/repos/groupe14/browse">GROUPE14 |</a>
+                
+					{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+					Connecté en tant que {{ app.user.username }}
+					-
+					<a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+				{% else %}
+					<a href="{{ path('fos_user_security_login') }}">Connexion</a>
+				{% endif %}
+				{% endblock %}
             </div>
         </section>
 

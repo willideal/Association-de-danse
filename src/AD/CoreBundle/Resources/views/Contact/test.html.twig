@@ -1,0 +1,15 @@
+{# src/AD/CoreBundle/Resources/views/Page/index.html.twig #}
+{% extends 'ADCoreBundle::layout.html.twig' %}
+
+{% block body %}
+   <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		 {{ form_widget(form) }}
+
+        <input type="submit" value="Envoyer" />
+    </form>
+  
+   {% if cours is not null %}
+      {{ cours.idprof }}
+   {% endif %}
+   
+{% endblock %}

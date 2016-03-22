@@ -1,0 +1,3 @@
+ad_utilisateur_homepage:
+    path:     /
+    defaults: { _controller: ADUtilisateurBundle:Default:index }

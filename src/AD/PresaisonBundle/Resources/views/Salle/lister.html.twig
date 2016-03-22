@@ -1,0 +1,31 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Salles de cours</h1>
+	<TR>
+             <TH>Nom</TH>
+			 <TH>Capacité</TH>
+			 <TH>Lieu</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for s in salles %}
+    <tr>
+	<td>{{ s.nomsalle }}</td>
+	<td>{{ s.capacite }}</td>
+	<td>{{ s.idlieu }}</td>
+	
+	<td><a href="{{ path('ad_salle_modifier', { 'id': s.idSalle }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_salle_supprimer', { 'id': s.idSalle }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucune salle n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br><br/><p> <a href="{{ path('ad_salle_ajouter') }}">Ajouter une salle</a><p>
+{% endblock %}

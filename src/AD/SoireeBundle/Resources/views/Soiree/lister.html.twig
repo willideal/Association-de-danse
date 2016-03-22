@@ -1,0 +1,37 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Nos soirées</h1>
+	<TR>
+             <TH>Nom</TH>
+			 <TH>Date Soirée</TH>
+			 <TH>Heure Début</TH>
+			 <TH>Heure Fin</TH>
+			 <TH>Dress Code</TH>
+			 <TH>Tarif</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for s in soirees %}
+    <tr>
+	<td>{{ s.intitule }}</td>
+	<td>{{ s.datesoiree|date('Y-m-d') }}</td>
+	<td>{{ s.heuredebutsoiree|date('H:i') }}</td>
+	<td>{{ s.heurefinsoiree|date('H:i') }}</td>
+	<td>{{ s.dressecode }}</td>
+	<td>{{ s.tarifsoiree }} €</td>
+	
+	<td><a href="{{ path('ad_soiree_modifier', { 'id': s.idSoiree}) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_soiree_supprimer', { 'id': s.idSoiree }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucune soirée n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br><br/><p> <a href="{{ path('ad_soiree_ajouter') }}">Ajouter une soirée</a><p>
+{% endblock %}

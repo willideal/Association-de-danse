@@ -1,0 +1,36 @@
+
+
+{% block body %}
+
+<table>
+<h1>Les Professeurs</h1>
+	<TR>
+             <TH><b>Nom</b></TH>
+			 <TH>Prénoms</TH>
+			 <TH>Téléphone</TH>
+			 <TH>Email</TH>
+			 <TH>Tarif Cours</TH>
+			 <TH>Tarif Stage</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for f in professeurs %}
+    <tr>
+	<td>{{ f.nomprof }}</td>
+	<td>{{ f.prenomprof }}</td>
+	<td>{{ f.telprof }}</td>
+	<td>{{ f.emailprof }}</td>
+	<td>{{ f.tarifhorairecours }} €</td>
+	<td>{{ f.forfaithorairestage }} €</td>
+	<td><a href="{{ path('ad_professeur_modifier', { 'id': f.idprof }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_professeur_supprimer', { 'id': f.idprof }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun professeur n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

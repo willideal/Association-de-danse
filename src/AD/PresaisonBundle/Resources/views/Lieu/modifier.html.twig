@@ -1,0 +1,30 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block content %}
+<h1>Ajouter/Modifier un lieu</h1>
+
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter/modifier un lieu </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Envoyer" />
+    </form>
+<br/><br/><br/>
+    <ul>
+        <li>
+            <p><a href="{{ path('ad_lieu_lister') }}">Retour à la liste des Lieux</a></p>
+        </li>
+    </ul>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+{% endblock %}

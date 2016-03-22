@@ -1,0 +1,33 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Planning Hebdomadaire</h1>
+	<TR>
+             <TH>Jour</TH>
+			 <TH>Heure Début</TH>
+			 <TH>Heure Fin</TH>
+			 <TH>Professeur</TH>
+			 <TH>Salle</TH>
+			 <TH>Danse</TH>
+			 <TH>Niveau</TH>
+    </TR>
+{% for co in cours %}
+    <tr>
+	<td>{{ co.jourcourshebdo }}</td>
+	<td>{{ co.heuredebutcourshebdo|date('H:i') }}</td>
+	<td>{{ co.heurefincourshebdo|date('H:i') }}</td>
+	<td>{{ co.idprof }}</td>
+	<td>{{ co.idsalle }}</td>
+	<td>{{ co.iddanse }}</td>
+	<td>{{ co.idniveau }}</td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun cours n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

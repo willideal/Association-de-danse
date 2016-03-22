@@ -1,0 +1,31 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Les qualifications d'un prof</h1>
+	<TR>
+             <TH>Professeur</TH>
+			 <TH>Danse</TH>
+			 <TH>Niveau</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for q in qualifiers %}
+    <tr>
+	<td>{{ q.idprof }}</td>
+	<td>{{ q.iddanse }}</td>
+	<td>{{ q.idniveau }}</td>
+	
+	<td><a href="{{ path('ad_qualifier_modifier', { 'id': q.idqualif }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_qualifier_supprimer', { 'id': q.idqualif }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucune qualification n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br></br><p> <a href="{{ path('ad_qualifier_ajouter') }}">Ajouter une  qualification</a><p>
+{% endblock %}

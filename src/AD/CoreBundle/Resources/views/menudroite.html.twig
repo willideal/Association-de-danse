@@ -1,0 +1,51 @@
+{# src/AD/CoreBundle/Resources/views/menudroite.html.twig #}
+{% extends 'ADCoreBundle:layout.html.twig' %}
+
+{% block sidebar %}
+    {#Sidebar content#}
+ {% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/contact.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+  <div class="top">
+                    {% block menu_droite %}
+											
+						{% if is_granted('ROLE_ADMIN') %}
+                        <nav>
+                           <ul id="menu-demo2">
+							<li><a href="{{ path('ad_professeur_lister') }}">Nos professeurs</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_qualifier_lister') }}">Qualification des profs</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_forfait_lister') }}">Nos Tarifs</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_danse_lister') }}">Nos Danses</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_cours_lister') }}">Nos Cours</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_lieu_lister') }}">Gestion Lieu</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_salle_lister') }}">Gestion Salle</a>
+								<ul>
+								</ul>
+							</li>
+</ul>
+                        </nav>
+											
+					{% endif %}
+                    {% endblock %}
+                </div>
+
+{% endblock %}

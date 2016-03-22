@@ -1,0 +1,31 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Les cours d'initiation d'une  soirée</h1>
+	<TR>
+             <TH>Soirée</TH>
+			 <TH>Danse</TH>
+			 <TH>Salle</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for ci in coursinits %}
+    <tr>
+	<td>{{ ci.idsoiree }}</td>
+	<td>{{ ci.iddanse }}</td>
+	<td>{{ ci.idsalle }}</td>
+	
+	<td><a href="{{ path('ad_coursinit_modifier', { 'id': ci.idinitiation }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_coursinit_supprimer', { 'id': ci.idinitiation }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun cours d'initiation n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br></br><p> <a href="{{ path('ad_coursinit_ajouter') }}">Ajouter un cours d'initiation</a><p>
+{% endblock %}

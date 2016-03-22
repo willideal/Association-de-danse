@@ -1,20 +1,53 @@
-ad_stage:
-    resource: "@ADStageBundle/Resources/config/routing.yml"
-    prefix:   /
-
-ad_soiree:
-    resource: "@ADSoireeBundle/Resources/config/routing.yml"
-    prefix:   /
-
-ad_inscription:
-    resource: "@ADInscriptionBundle/Resources/config/routing.yml"
-    prefix:   /
-
-ad_presaison:
-    resource: "@ADPresaisonBundle/Resources/config/routing.yml"
-    prefix:   /
-
 ad_core:
     resource: "@ADCoreBundle/Resources/config/routing.yml"
     prefix:   /ad
 
+ad_stage:
+    resource: "@ADStageBundle/Resources/config/routing.yml"
+    prefix:   /ad
+
+ad_soiree:
+    resource: "@ADSoireeBundle/Resources/config/routing.yml"
+    prefix:   /ad
+
+ad_presaison:
+    resource: "@ADPresaisonBundle/Resources/config/routing.yml"
+    prefix:   /ad
+ad_utilisateur:
+    resource: "@ADUtilisateurBundle/Resources/config/routing.yml"
+    prefix:   /ad
+
+ad_inscription:
+    resource: "@ADInscriptionBundle/Resources/config/routing.yml"
+    prefix:   /ad
+
+#Route FOSUserBundle
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+
+    prefix: /profile
+
+
+fos_user_register:
+
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+
+    prefix: /register
+
+
+fos_user_resetting:
+
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+
+    prefix: /resetting
+
+
+fos_user_change_password:
+
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+
+    prefix: /profile
