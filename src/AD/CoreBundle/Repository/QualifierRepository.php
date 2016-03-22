@@ -24,3 +24,4 @@ class QualifierRepository extends \Doctrine\ORM\EntityRepository
 				->getOneOrNullResult() ;
 }
 }
+
