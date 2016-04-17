@@ -1,10 +1,16 @@
 {% extends 'ADCoreBundle:menuevenement.html.twig' %}
 
 {% block body %}
+
+{# On affiche tous les messages flash dont le nom est « info » #}
+  {% for message in app.session.flashbag.get('info') %}
+    <div class="alert alert-info">{{ message }}</div>
+  {% endfor %}
+
 <table>
 <h1>Nos Soirées</h1>
 	<TR>
-             <TH>Nom</TH>
+             <TH>Soirée</TH>
 			 <TH>Date Soirée</TH>
 			 <TH>Heure Début</TH>
 			 <TH>Heure Fin</TH>
@@ -31,27 +37,33 @@
 <table>
 <h1>Nos Stages</h1>
 	<TR>
-             <TH>Nom</TH>
-			 <TH>Date Soirée</TH>
-			 <TH>Heure Début</TH>
-			 <TH>Heure Fin</TH>
-			 <TH>Dress Code</TH>
+             <TH>Stage</TH>
+			 <TH>Date Stage</TH>
+			 <TH>Heure de début</TH>
+			 <TH>Heure de fin</TH>
 			 <TH>Tarif</TH>
+			 <TH>Danse</TH>
+			 <TH>Salle</TH>
+			 
     </TR>
-{% for s in soirees %}
+{% for d in stages %}
     <tr>
-	<td>{{ s.intitule }}</td>
-	<td>{{ s.datesoiree|date('Y-m-d') }}</td>
-	<td>{{ s.heuredebutsoiree|date('H:i') }}</td>
-	<td>{{ s.heurefinsoiree|date('H:i') }}</td>
-	<td>{{ s.dressecode }}</td>
-	<td>{{ s.tarifsoiree }} €</td>
+	<td>{{ d.intitulestage }}</td>
+	<td>{{ d.datestage|date('Y-m-d') }}</td>
+	<td>{{ d.heuredebutstage |date('H:i') }}</td>
+	<td>{{ d.heurefinstage|date('H:i') }}</td>
+	<td>{{ d.tarifstage }} €</td>
+	<td>{{ d.idDanse }}</td>
+	<td>{{ d.idSalle }}</td>
+	
+	
 	<td></td>
 	
 {% else %}
     <tr>
-	<td>Aucune soirée n'a été trouvé.</td>
+	<td>Aucune stage n'a été trouvé.</td>
     </tr>
 {% endfor %}
+<tr><td><a href="{{ path('ad_stagiaire_ajouter') }}">S'inscrire à un stage</a></td></tr>
 </table>
 {% endblock %}

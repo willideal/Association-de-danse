@@ -1,0 +1,41 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+{% block body %}
+
+<table>
+<h1>Les Stages</h1>
+	<TR>
+             <TH>Nom</TH>
+			 <TH>Date</TH>
+			 <TH>Heure debut</TH>
+			 <TH>heure fin</TH>
+			 <TH>Danse</TH>
+			 <TH>Professeur</TH>
+			 <TH>Salle</TH>
+			 <TH>Niveau</TH>
+			 <TH>Inscription</TH>
+			 
+    </TR>
+{% for d in stages %}
+    <tr>
+	<td>{{ d.intitulestage }}</td>
+	<td>{{ d.datestage|date("Y-m-d")  }}</td>
+	<td>{{ d.heuredebutstage|date('h:m') }}</td>
+	<td>{{ d.heurefinstage|date('h:m') }}</td>
+	<td>{{ d.idDanse }}</td>
+	<td>{{ d.idSalle }}</td>
+	<td>{% for d in d.idProf %}
+		{{ d.idProf }}
+		{% endfor %}
+	</td>
+    <td><a href="{{ path('ad_stagiaire_ajouter') }}">S'inscrire</a></td>
+	<td></td>
+	</tr>
+	
+{% else %}
+    <tr>
+	<td>Aucun stage n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{# src/AD/CoreBundle/Resources/views/Contact/contact.html.twig #}
+{% extends 'ADCoreBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact MASSASSA</h1>
+    </header>
+
+
+    <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.sujet) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Envoyer" />
+    </form>
+{% endblock %}

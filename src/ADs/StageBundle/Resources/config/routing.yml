@@ -1,0 +1,8 @@
+ad_stage_homepage:
+    path:     /
+    defaults: { _controller: ADStageBundle:Default:index }
+
+ad_stage_edit:
+    path:     /stage/edit
+    defaults: { _controller:ADStageBundle:Stage:edit }
+ 

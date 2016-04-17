@@ -1,8 +1,56 @@
 ad_stage_homepage:
     path:     /
     defaults: { _controller: ADStageBundle:Default:index }
+    
+ad_stage_modifier:
+    path:     /admin/stage/modifier{id}
+    defaults: { _controller:ADStageBundle:Stage:modifier }
 
-ad_stage_edit:
-    path:     /stage/edit
-    defaults: { _controller:ADStageBundle:Stage:edit }
- 
+ad_stage_ajouter:
+    path:     /admin/stage/ajouter
+    defaults: { _controller:ADStageBundle:Stage:modifier }
+    
+ad_stagiaire_modifier:
+    path:     /admin/stagiaire/modifier{id}
+    defaults: { _controller:ADStageBundle:Stagiaire:modifier }
+    
+ad_stagiaire_ajouter:
+    path:     /stagiaire/ajouter
+    defaults: { _controller:ADStageBundle:Stagiaire:modifier }
+    
+ad_reglementstage_modifier:
+    path:     /admin/reglementstage/modifier{id}
+    defaults: { _controller:ADStageBundle:Reglementstage:modifier }
+    
+ad_reglementstage_ajouter:
+    path:     /admin/reglementstage/ajouter
+    defaults: { _controller:ADStageBundle:Reglementstage:modifier }
+
+ad_stage_lister:
+    path:     /admin/admin/stage/lister
+    defaults: { _controller:ADStageBundle:Stage:lister }
+    
+ad_stage_listeruti:
+    path:     /admin/stage/listeruti
+    defaults: { _controller:ADStageBundle:Stage:listeruti }
+    
+
+ad_stagiaire_lister:
+    path:     /admin/stagiaire/lister
+    defaults: { _controller:ADStageBundle:Stagiaire:lister }
+    
+ad_reglementstage_lister:
+    path:     /admin/reglementstage/lister
+    defaults: { _controller:ADStageBundle:Reglementstage:Lister }
+    
+ad_stage_delete:
+    path:     /admin/stage/delete/{id}
+    defaults: { _controller:ADStageBundle:Stage:delete }
+    
+ad_stagiaire_delete:
+    path:     /admin/stagiaire/delete/{id}
+    defaults: { _controller:ADStageBundle:Stagiaire:delete }
+    
+ad_reglementstage_delete:
+    path:     /admin/reglementstage/delete/{id}
+    defaults: { _controller:ADStageBundle:Reglementstage:delete }

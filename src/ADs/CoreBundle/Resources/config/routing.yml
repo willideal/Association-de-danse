@@ -1,0 +1,8 @@
+ad_core_homepage:
+    path:     /
+    defaults: { _controller: ADCoreBundle:Core:index }
+
+ad_core_contact:
+    path:     /contact
+    defaults: { _controller: ADCoreBundle:Contact:contact }
+

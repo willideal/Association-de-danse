@@ -1,0 +1,28 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Les Forfaits</h1>
+	<TR>
+             <TH>Libellé</TH>
+			 <TH>Tarif</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for tf in typeforfaits %}
+    <tr>
+	<td>{{ tf.libelleTypeForfait }}</td>
+	<td>{{ tf.tarifTypeForfait }} €</td>
+	<td><a href="{{ path('ad_forfait_modifier', { 'id': tf.idTypeForfait }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_forfait_supprimer', { 'id': tf.idTypeForfait }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun forfait n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br></br><p> <a href="{{ path('ad_forfait_ajouter') }}">Ajouter un Forfait</a><p>
+{% endblock %}

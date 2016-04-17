@@ -1,0 +1,28 @@
+{# src/AD/InscrptionBundle/Resources/views/Inscription/lister.html.twig #}
+
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Type de règlements </h1>
+	<TR>
+             <TH><b>Adhérents</b></TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for n in adherents %}
+    <tr>
+	<td>{{ n.adherent }}</td>
+	<td><a href="{{ path('ad_adherent_modifier', { 'id': n.idadherent }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_adherent_supprimer', { 'id': n.idadherent }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun adhérent n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+<br/><br/><br/>
+</br></br><p> <a href="{{ path('ad_inscription_ajouter') }}"> Ajouter un adhérent</a><p>
+{% endblock %}

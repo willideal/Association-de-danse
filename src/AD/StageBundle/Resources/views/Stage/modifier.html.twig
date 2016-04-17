@@ -1,0 +1,28 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+{% block content %}
+<h1>Ajouter un stage</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter Un Stage </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Ajouter" />
+    </form>
+
+    <ul>
+        <li>
+          <p><a href="{{ path('ad_stage_lister') }}">Retour à la liste des stages</a></p>
+        </li>
+    </ul>
+{% endblock %}

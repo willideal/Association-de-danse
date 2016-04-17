@@ -1,0 +1,31 @@
+{# src/AD/PresaisonBundle/Resources/views/Association/listeprof.html.twig #}
+
+{% extends "ADCoreBundle::menudroite_association.html.twig" %}
+
+{% block title %}
+  Les Danses
+ {% endblock %}
+
+{% block body %}
+
+<table>
+<h1>Les Danses</h1>
+	<TR>
+             <TH>Nom</TH>
+			 <TH>Description</TH>
+    </TR>
+{% for d in danses %}
+    <tr>
+	<td>{{ d.nomDanse }}</td>
+	<td>{{ d.descrDanse }}</td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucune danse n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+<br/><br/><br/>
+</br></br><p> <a href="{{ path('ad_danse_ajouter') }}">Ajouter une danse</a><p>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Les danses pratiqué lors d'une  soirée</h1>
+	<TR>
+             <TH>Soirée</TH>
+			 <TH>Danse</TH>
+			 <TH>Salle</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for p in pratiques %}
+    <tr>
+	<td>{{ p.idsoiree }}</td>
+	<td>{{ p.iddanse }}</td>
+	<td>{{ p.idsalle }}</td>
+	{% if is_granted('ROLE_ADMIN') %}
+	<td><a href="{{ path('ad_pratiquer_modifier', { 'id': p.idpratiquer }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_pratiquer_supprimer', { 'id': p.idpratiquer }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	{% endif %}
+	
+{% else %}
+    <tr>
+	<td>Aucune danse de soirée n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br></br><p> <a href="{{ path('ad_pratiquer_ajouter') }}">Ajouter une danse d'une soiree</a><p>
+{% endblock %}

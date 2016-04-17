@@ -39,7 +39,7 @@ class Inscriptionforfait
     /**
      * @var \Typeforfait
      *
-     * @ORM\ManyToOne(targetEntity="Typeforfait")
+     * @ORM\ManyToOne(targetEntity="Typeforfait", cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idTypeForfait", referencedColumnName="idTypeForfait")
      * })
@@ -49,14 +49,34 @@ class Inscriptionforfait
     /**
      * @var \Adherent
      *
-     * @ORM\ManyToOne(targetEntity="Adherent")
+     * @ORM\ManyToOne(targetEntity="Adherent", cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idAdherent", referencedColumnName="idAdherent")
      * })
      */
     private $idadherent;
 
+	
+	/**
+     * @var \Danse
+     *
+     * @ORM\ManyToOne(targetEntity="Danse", cascade={"persist"})
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="danse", referencedColumnName="idDanse")
+     * })
+     */
+    private $danse;
 
+	
+	/**
+     * Constructor
+     */
+	public function __construct(){
+		
+		$this->dateinscriptionforfait = new \Datetime();
+		$this->etatinscriptionforfait = "Non payé";
+		
+	}
 
     /**
      * Get idinscriptionforfait
@@ -159,4 +179,28 @@ class Inscriptionforfait
     {
         return $this->idadherent;
     }
+
+    /**
+     * Set danse
+     *
+     * @param \AD\CoreBundle\Entity\Danse $danse
+     * @return Inscriptionforfait
+     */
+    public function setDanse(\AD\CoreBundle\Entity\Danse $danse = null)
+    {
+        $this->danse = $danse;
+
+        return $this;
+    }
+
+    /**
+     * Get danse
+     *
+     * @return \AD\CoreBundle\Entity\Danse 
+     */
+    public function getDanse()
+    {
+        return $this->danse;
+    }
+
 }

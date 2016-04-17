@@ -35,6 +35,7 @@ ad_danse_supprimer:
     path:  /admin/danse/supprimer/{id}
     defaults: { _controller: ADPresaisonBundle:Danse:supprimer }
 
+
 #route forfait
 ad_forfait_lister:
     path:  /admin/forfait/
@@ -108,6 +109,7 @@ ad_professeur_rechercher:
     requirements:
     methods: POST
 
+
 #route qualifier
 ad_qualifier_lister:
     path:  /admin/qualifier/
@@ -147,3 +149,19 @@ ad_cours_supprimer:
     path:  /admin/cours/supprimer/{id}
     defaults: { _controller: ADPresaisonBundle:Courshebdomadaire:supprimer }
 
+#route association
+ad_association_homepage:
+    path:  /association/
+    defaults: { _controller: ADPresaisonBundle:Association:index }
+
+ad_professeur_liste:
+    path:  /association/professeur/
+    defaults: { _controller: ADPresaisonBundle:Association:listerProfs }	
+
+ad_forfait_liste:
+    path:  /association/forfait/
+    defaults: { _controller: ADPresaisonBundle:Association:listerTypeForfait }	
+
+ad_danse_liste:
+    path:  /association/danse/
+    defaults: { _controller: ADPresaisonBundle:Association:listerDanse }	

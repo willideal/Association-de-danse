@@ -18,6 +18,7 @@ class SoireeController extends Controller
 	   $em = $this->container->get('doctrine')->getEntityManager();
 
     $soirees= $em->getRepository('ADCoreBundle:Soiree')->findAll();
+	
 
     return $this->container->get('templating')->renderResponse('ADSoireeBundle:Soiree:lister.html.twig', 
     array(
@@ -29,11 +30,14 @@ class SoireeController extends Controller
     {
 	   $em = $this->container->get('doctrine')->getEntityManager();
 
-    $soirees= $em->getRepository('ADCoreBundle:Soiree')->findAll();
+		$soirees= $em->getRepository('ADCoreBundle:Soiree')->findAll();
+	
+	    $stages= $em->getRepository('ADCoreBundle:Stage')->findAll();
 
     return $this->container->get('templating')->renderResponse('ADSoireeBundle:Soiree:listerEvenement.html.twig', 
     array(
-    'soirees' => $soirees
+    'soirees' => $soirees,
+	'stages' => $stages
     ));
     }
     

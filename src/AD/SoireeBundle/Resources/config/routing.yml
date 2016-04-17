@@ -1,8 +1,3 @@
-ad_soiree_homepage:
-    path:     /
-    defaults: { _controller: ADSoireeBundle:Default:index }
-
-
 #route soiree
 ad_evenement_liste:
     path:  /evenement/

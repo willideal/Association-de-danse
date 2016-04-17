@@ -1,0 +1,31 @@
+{# src/AD/InscrptionBundle/Resources/views/Typereduction/modifier.html.twig #}
+
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block content %}
+<h1>Ajouter un type de règlement</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter/Modifier Type de Règlement </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Envoyer" />
+    </form>
+<br/><br/><br/>
+    <ul>
+        <li>
+            <p><a href="{{ path('ad_typereglement_lister') }}">Retour à la liste des types de règlement</a></p>
+        </li>
+    </ul>
+{% endblock %}

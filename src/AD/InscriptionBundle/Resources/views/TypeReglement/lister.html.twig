@@ -1,0 +1,27 @@
+{# src/AD/InscrptionBundle/Resources/views/Typereduction/lister.html.twig #}
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+<table>
+<h1>Type de règlements </h1>
+	<TR>
+             <TH><b>Type règlement</b></TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for n in typereglements %}
+    <tr>
+	<td>{{ n.typereglement }}</td>
+	<td><a href="{{ path('ad_typereglement_modifier', { 'id': n.idtypereglement }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_typereglement_supprimer', { 'id': n.idtypereglement }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun type de règlement n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+<br/><br/><br/>
+</br></br><p> <a href="{{ path('ad_typereglement_ajouter') }}">Ajouter type de règlement</a><p>
+{% endblock %}

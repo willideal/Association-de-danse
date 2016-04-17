@@ -1,0 +1,37 @@
+{# src/AD/CoreBundle/Resources/views/menuevenement.html.twig #}
+{% extends 'ADCoreBundle:layout.html.twig' %}
+
+{% block sidebar %}
+    {#Sidebar content#}
+ {% block stylesheets %}
+    {{ parent() }}
+   
+{% endblock %}
+  <div class="top">
+                    {% block menu_droite %}
+                        <nav>
+                           <ul id="menu-demo2">
+													   
+							
+							<li><a href="{{ path('ad_soiree_lister') }}">Gestion des stages</a>
+								<ul>
+								</ul>
+							</li>{% if is_granted('ROLE_ADMIN') %}
+							<li><a href="#">Gestion des soirées</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_pratiquer_lister') }}">Danses pratiquées aux soirées</a>
+								<ul>
+								</ul>
+							</li>
+							<li><a href="{{ path('ad_coursinit_lister') }}">Les Cours d'initiation des soirées</a>
+								<ul>
+								</ul>
+							</li>
+							{% endif %}
+                        </nav>
+                    {% endblock %}
+                </div>
+
+{% endblock %}

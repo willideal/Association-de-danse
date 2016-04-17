@@ -1,0 +1,36 @@
+{# src/AD/PresaisonBundle/Resources/views/Association/listeprof.html.twig #}
+
+{% extends "ADCoreBundle::menudroite_association.html.twig" %}
+
+{% block title %}
+  Les Profs
+ {% endblock %}
+
+{% block body %}
+
+<table>
+<h1>Les Professeurs</h1>
+	<TR>
+             <TH><b>Nom</b></TH>
+			 <TH>Prénoms</TH>
+			 <TH>Téléphone</TH>
+			 <TH>Email</TH>
+			 		 
+    </TR>
+{% for f in professeurs %}
+    <tr>
+	<td>{{ f.nomprof }}</td>
+	<td>{{ f.prenomprof }}</td>
+	<td>{{ f.telprof }}</td>
+	<td>{{ f.emailprof }}</td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun professeur n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br></br><p> <a href="{{ path('ad_professeur_ajouter') }}">Ajouter un professeur</a><p>
+{% endblock %}

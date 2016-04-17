@@ -1,0 +1,45 @@
+{% extends ':layout.html.twig' %}
+
+{% block title %}Liste des danses{% endblock %}
+
+{% block content %}
+
+{% include 'ADDanseBundle:Danse:show.html.twig' with {'danses' : danses}  %}
+
+<p><a href="{{ path('ad_danse_new') }}">Ajouter un danse</a><p>
+
+{% endblock %}
+
+
+<form id="form_recherche" action="{{ path('ad_danse_rechercher') }}" method="post" >
+	{{ form_widget(form) }}
+	<input type="submit" value="Rechercher" />
+</form>
+
+<div class="loading"></div>
+<div id="resultats_recherche"> 
+    {% include 'ADDanseBundle:Danse:show.html.twig' with {'danses' : danses}  %}
+</div>
+
+<p><a href="{{ path('ad_danse_new') }}">Ajouter une danse</a><p>
+
+<script>
+$(".loading").hide();
+$("#form_recherche").submit(function(){ 
+    $(".loading").show();
+    var motcle = $("#danserecherche_motcle").val();
+    var DATA = 'motcle=' + motcle;
+    $.ajax({
+        type: "POST",
+        url: "{{ path('ad_danse_rechercher')}}",
+        data: DATA,
+        cache: false,
+        success: function(data){
+           $('#resultats_recherche').html(data);
+           $(".loading").hide();
+        }
+    });    
+    return false;
+});
+</script>
+

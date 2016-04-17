@@ -10,4 +10,14 @@ namespace AD\CoreBundle\Repository;
  */
 class TypeforfaitRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findByTypeForfaitCurrent($idtypeforfait)
+		{
+		  $qb = $this->createQueryBuilder('t');
+		  $qb->where('t.idtypeforfait = :idtypeforfait')
+			   ->setParameter('idtypeforfait', $idtypeforfait) ;
+				return $qb
+				->getQuery()
+				->getResult()
+			  ;
+}
 }

@@ -1,3 +1,50 @@
-ad_inscription_homepage:
-    path:     /
-    defaults: { _controller: ADInscriptionBundle:Default:index }
+ad_inscription_lister:
+    path:     /admin/inscription/lister
+    defaults: { _controller: ADInscriptionBundle:Inscription:lister }
+
+ad_inscription_ajouter:
+    path:     /inscription/ajouter/{id}
+    defaults: { _controller: ADInscriptionBundle:Inscription:ajouter }
+
+ad_inscription_ajoute:
+    path:     /inscription/ajouter/
+    defaults: { _controller: ADInscriptionBundle:Inscription:ajoute }
+
+ad_inscription_gerer:
+    path:     /admin/inscription/gerer
+    defaults: { _controller: ADInscriptionBundle:Inscription:gerer }
+
+
+# Type de Règlement
+ad_typereglement_ajouter:
+    path:     /admin/typereglement/ajouter
+    defaults: { _controller: ADInscriptionBundle:TypeReglement:modifier }
+
+ad_typereglement_modifier:
+    path:     /admin/typereglement/modifier/{id}
+    defaults: { _controller: ADInscriptionBundle:TypeReglement:modifier }
+
+ad_typereglement_lister:
+    path:     /admin/typereglement/lister
+    defaults: { _controller: ADInscriptionBundle:TypeReglement:lister }
+
+ad_typereglement_supprimer:
+    path:  /admin/typereglement/supprimer/{id}
+    defaults: { _controller: ADInscriptionBundle:TypeReglement:supprimer }
+
+# Adherent
+ad_adherent_ajouter:
+    path:     /admin/adherent/ajouter
+    defaults: { _controller: ADInscriptionBundle:Adherent:modifier }
+
+ad_adherent_modifier:
+    path:     /admin/adherent/modifier/{id}
+    defaults: { _controller: ADInscriptionBundle:Adherent:modifier }
+
+ad_adherent_lister:
+    path:     /admin/adherent/lister
+    defaults: { _controller: ADInscriptionBundle:Adherent:lister }
+
+ad_adherent_supprimer:
+    path:  /admin/adherent/supprimer/{id}
+    defaults: { _controller: ADInscriptionBundle:Adherent:supprimer }

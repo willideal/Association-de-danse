@@ -1,0 +1,29 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block body %}
+
+<table>
+<h1>Les Danses</h1>
+	<TR>
+             <TH>Nom</TH>
+			 <TH>Description</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for d in danses %}
+    <tr>
+	<td>{{ d.nomDanse }}</td>
+	<td>{{ d.descrDanse }}</td>
+	<td><a href="{{ path('ad_danse_modifier', { 'id': d.idDanse }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_danse_supprimer', { 'id': d.idDanse }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucune danse n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+<br/><br/><br/>
+</br></br><p> <a href="{{ path('ad_danse_ajouter') }}">Ajouter une danse</a><p>
+{% endblock %}

@@ -1,0 +1,32 @@
+{# src/AD/PresaisonBundle/Resources/views/Association/listeprof.html.twig #}
+
+{% extends "ADCoreBundle::menudroite_association.html.twig" %}
+
+{% block title %}
+  Nos forfaits
+ {% endblock %}
+
+{% block body %}
+<table>
+<h1>Les Forfaits</h1>
+	<TR>
+             <TH>Libellé</TH>
+			 <TH>Tarif</TH>
+	</TR>
+{% for tf in typeforfaits %}
+    <tr>
+	<td>{{ tf.libelleTypeForfait }}</td>
+	<td>{{ tf.tarifTypeForfait }} €</td>
+	<td><a href="{{ path('ad_inscription_ajouter', { 'id': tf.idtypeforfait }) }}">Souscrire</a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun forfait n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br></br><p> <a href="{{ path('ad_forfait_ajouter') }}">Ajouter un Forfait</a><p>
+{% endblock %}
+

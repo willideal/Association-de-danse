@@ -1,0 +1,60 @@
+ad_soiree_homepage:
+    path:     /
+    defaults: { _controller: ADSoireeBundle:Default:index }
+
+
+#route soiree
+ad_evenement_liste:
+    path:  /evenement/
+    defaults: { _controller: ADSoireeBundle:Soiree:liste }	
+ad_soiree_lister:
+    path:  /admin/soiree/
+    defaults: { _controller: ADSoireeBundle:Soiree:lister }	
+ad_soiree_ajouter:
+    path:  /admin/soiree/ajouter
+    defaults: { _controller: ADSoireeBundle:Soiree:modifier }
+ad_soiree_lister:
+    path:  /admin/soiree/lister/
+    defaults: { _controller: ADSoireeBundle:Soiree:lister }
+ad_soiree_modifier:
+    path:  /admin/soiree/modifier/{id}
+    defaults: { _controller: ADSoireeBundle:Soiree:modifier }
+ad_soiree_supprimer:
+    path:  /admin/soiree/supprimer/{id}
+    defaults: { _controller: ADSoireeBundle:Soiree:supprimer }
+
+
+#route cours initiation
+ad_coursinit_lister:
+    path:  /admin/coursinitial/
+    defaults: { _controller: ADSoireeBundle:Coursinitiation:lister }	
+ad_coursinit_ajouter:
+    path:  /admin/coursinitial/ajouter
+    defaults: { _controller: ADSoireeBundle:Coursinitiation:modifier }
+ad_coursinit_lister:
+    path:  /admin/coursinitial/lister/
+    defaults: { _controller: ADSoireeBundle:Coursinitiation:lister }
+ad_coursinit_modifier:
+    path:  /admin/coursinitial/modifier/{id}
+    defaults: { _controller: ADSoireeBundle:Coursinitiation:modifier }
+ad_coursinit_supprimer:
+    path:  /admin/coursinitial/supprimer/{id}
+    defaults: { _controller: ADSoireeBundle:Coursinitiation:supprimer }
+
+
+#route pratiquer
+ad_pratiquer_lister:
+    path:  /admin/pratiquer/
+    defaults: { _controller: ADSoireeBundle:Pratiquer:lister }	
+ad_pratiquer_ajouter:
+    path:  /admin/pratiquer/ajouter
+    defaults: { _controller: ADSoireeBundle:Pratiquer:modifier }
+ad_pratiquer_lister:
+    path:  /admin/pratiquer/lister/
+    defaults: { _controller: ADSoireeBundle:Pratiquer:lister }
+ad_pratiquer_modifier:
+    path:  /admin/pratiquer/modifier/{id}
+    defaults: { _controller: ADSoireeBundle:Pratiquer:modifier }
+ad_pratiquer_supprimer:
+    path:  /admin/pratiquer/supprimer/{id}
+    defaults: { _controller: ADSoireeBundle:Pratiquer:supprimer }

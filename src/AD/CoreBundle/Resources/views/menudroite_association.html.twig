@@ -1,0 +1,28 @@
+{# src/AD/CoreBundle/Resources/views/menudroite_association.html.twig #}
+{% extends 'ADCoreBundle:layout.html.twig' %}
+
+{% block sidebar %}
+    {#Sidebar content#}
+	{% block stylesheets %}
+		{{ parent() }}
+		<link href="{{ asset('css/contact.css') }}" type="text/css" rel="stylesheet" />
+	{% endblock %}
+	<div class="top">
+		
+		{% block menu_droite %}
+											
+						
+                        <nav>
+                           <ul id="menu-demo2">
+								<li><a href="{{ path('ad_professeur_liste') }}">Nos professeurs</a></li>
+								<li><a href="{{ path('ad_danse_liste') }}">Nos Danses</a></li>
+								<li><a href="{{ path('ad_forfait_liste') }}">Nos Forfaits</a></li>
+							</ul>
+                        </nav>
+											
+					
+        {% endblock %}
+                    
+    </div>
+
+{% endblock %}

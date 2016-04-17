@@ -1,0 +1,4 @@
+services:
+#    ad_stage.example:
+#        class: AD\StageBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

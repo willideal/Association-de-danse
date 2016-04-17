@@ -1,0 +1,29 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block content %}
+<h1>Ajouter une Danse</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter Une Danse </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Ajouter" />
+    </form>
+<br/><br/><br/>
+    <ul>
+        <li>
+            <p><a href="{{ path('ad_danse_lister') }}">Retour à la liste des danses</a></p>
+        </li>
+    </ul>
+{% endblock %}

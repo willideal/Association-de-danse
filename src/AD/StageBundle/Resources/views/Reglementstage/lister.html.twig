@@ -1,0 +1,35 @@
+{% extends 'ADCoreBundle:layout.html.twig' %}
+
+{% block body %}
+
+<table>
+<h1>Les Reglements</h1>
+	<TR>
+             <TH>Nom</TH>
+			 <TH>Modification</TH>
+			 <TH>Suppression</TH>
+    </TR>
+{% for d in Reglementstage %}
+    <tr>
+	
+	<td>{{ d.montantreglement }}</td>
+	<td>{{ d.etatreglement }}</td>
+	<td>{% for d in d.idStage %}
+		<h1>{{ d.idStage }}</h1>
+		{% endfor %}</td>
+	<td>{% for d in d.idStagiaire %}
+		{{ d.idStagiaire }}
+		{% endfor %}</td>
+	<td><a href="{{ path('ad_reglementstage_modifier', { 'id': d.idreglementstage }) }}">Modifier</a></td>
+	<td><a href="{{ path('ad_reglementstage_delete', { 'id': d.idreglementstage }) }}">Supprimer</a></td>
+	<td></td>
+	
+{% else %}
+    <tr>
+	<td>Aucun reglement n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+</br></br><p> <a href="{{ path('ad_reglementstage_ajouter') }}">Ajouter un reglement</a><p>
+{% endblock %}

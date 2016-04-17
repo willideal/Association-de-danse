@@ -1,0 +1,24 @@
+{# src/AD/InscrptionBundle/Resources/views/Inscription/ajouter.html.twig #}
+
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block title %} Inscription - {{ parent() }} {% endblock %}
+
+{% block body %}
+
+<h2>Inscritption</h2>
+
+<form action="" method="POST" {{form_enctype(form)}} class ="blogger">
+
+	{{ form_errors(form) }}
+	{{ form_widget(form) }}
+	{{ form_rest(form) }}
+	
+	<input type="submit" value="S'inscrire"/>
+	
+</form>
+
+
+<p><a href="{{ path('ad_core_homepage') }}">Retour à l'acceuil</a></p>
+
+{% endblock %}

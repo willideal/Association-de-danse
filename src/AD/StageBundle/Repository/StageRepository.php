@@ -1,6 +1,6 @@
 <?php
 
-namespace AD\PresaisonBundle\Repository;
+namespace AD\StageBundle\Repository;
 
 /**
  * StageRepository
@@ -9,5 +9,6 @@ namespace AD\PresaisonBundle\Repository;
  * repository methods below.
  */
 class StageRepository extends \Doctrine\ORM\EntityRepository
-{
+{	
 }
+

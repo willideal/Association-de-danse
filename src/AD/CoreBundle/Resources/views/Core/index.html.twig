@@ -8,8 +8,9 @@
 
 {% block body %}
 
-  <h2>Page d'accueil de notre site</h2>
-  
+  <h2>Bienvenue sur notre site !</h2>
+
+  <img src="{{ asset('bundles/adcore/images/animation.gif') }}" alt="massassa" style="width:512px; height:256px;" />
   
   {# On affiche tous les messages flash dont le nom est « info » #}
   {% for message in app.session.flashbag.get('info') %}

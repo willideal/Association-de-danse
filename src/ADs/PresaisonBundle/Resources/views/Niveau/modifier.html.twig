@@ -1,0 +1,29 @@
+{% extends 'ADCoreBundle:menudroite.html.twig' %}
+
+{% block content %}
+<h1>Ajouter un Niveau</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter/Modifier Un niveau </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Envoyer" />
+    </form>
+<br/><br/><br/>
+    <ul>
+        <li>
+            <p><a href="{{ path('ad_niveau_lister') }}">Retour à la liste des niveaux</a></p>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'ADCoreBundle:layout.html.twig' %}
+
+{% block content %}
+<h1>Ajouter un Reglement</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+    <h1>Ajouter Un Reglement </h1>
+	 <form action="" method="post" {{ form_enctype(form) }} class="blogger">
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+
+		{{ form_rest(form) }}
+
+        <input type="submit" value="Ajouter" />
+    </form>
+
+    <ul>
+        <li>
+           <p><a href="{{ path('ad_reglementstage_lister') }}">Retour à la liste des reglement</a></p>
+        </li>
+    </ul>
+{% endblock %}

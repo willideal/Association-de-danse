@@ -11,19 +11,13 @@
                     {% block menu_droite %}
                         <nav>
                            <ul id="menu-demo2">
-													   
-							
-							<li><a href="{{ path('ad_soiree_lister') }}">Gestion des stages</a>
-								<ul>
-								</ul>
-							</li>{% if is_granted('ROLE_ADMIN') %}
-							<li><a href="#">Gestion des soirées</a>
-								<ul>
-								</ul>
-							</li>
-							<li><a href="{{ path('ad_pratiquer_lister') }}">Danses pratiquées aux soirées</a>
-								<ul>
-								</ul>
+						   {% if is_granted('ROLE_ADMIN') %}
+							<li><a href="{{ path('ad_soiree_lister') }}">Gestion des soirées</a></li>
+							<li><a href="{{ path('ad_stage_lister') }}">Gestion des stages</a></li>
+							<li><a href="{{ path('ad_stagiaire_lister') }}">Gestion des stagiaires</a></li>
+							<li><a href="{{ path('ad_adherent_lister') }}">Gestion des adherents</a></li>
+							<li><a href="{{ path('ad_pratiquer_lister') }}">Danses pratiquées aux soirées</a></li>
+					
 							</li>
 							<li><a href="{{ path('ad_coursinit_lister') }}">Les Cours d'initiation des soirées</a>
 								<ul>

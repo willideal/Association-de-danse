@@ -1,0 +1,36 @@
+{% extends 'ADCoreBundle:menuevenement.html.twig' %}
+
+{% block body %}
+
+<table>
+<h1>Les Stages</h1>
+	<TR>
+             <TH>Intitulé Stage</TH>
+			 <TH>Date Stage</TH>
+			 <TH>Heure de début</TH>
+			 <TH>Heure de fin</TH>
+			 <TH>modifier</TH>
+			 <TH>Supprimer</TH>
+			 
+    </TR>
+{% for d in stages %}
+    <tr>
+	<td>{{ d.intitulestage }}</td>
+	<td>{{ d.datestage|date('Y-m-d') }}</td>
+	<td>{{ d.heuredebutstage |date('H:i') }}</td>
+	<td>{{ d.heurefinstage|date('H:i') }}</td>
+	<td><a href="{{ path('ad_stage_modifier', { 'id': d.idstage }) }}"><img src="{{ asset('bundles/adcore/images/b_edit.png') }}" alt="Modifier"/></a></td>
+	<td><a href="{{ path('ad_stage_delete', { 'id': d.idstage }) }}"><img src="{{ asset('bundles/adcore/images/b_drop.png') }}" alt="Supprimer"/></a></td>
+	</tr>
+	
+{% else %}
+    <tr>
+	<td>Aucun stage n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+	<tr>
+    <td><a href="{{ path('ad_stage_ajouter') }}">Ajouter un stage</a></td>
+	</tr>
+</table>
+
+{% endblock %}
